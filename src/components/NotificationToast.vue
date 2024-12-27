@@ -13,6 +13,7 @@
       {{ message }}
     </p>
     <button
+      data-testid="close-notification"
       title="close"
       ref="closeButton"
       class="notification__button"
