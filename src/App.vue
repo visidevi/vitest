@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 import NotificationToast from './components/NotificationToast.vue'
+import PostCard from './components/PostCard.vue'
 
 const message = ref('')
 const status = ref('')
@@ -12,6 +13,7 @@ const clearNotification = () => {
 
 <template>
   <NotificationToast status="success" :message @clear-notification="clearNotification" />
+  <PostCard />
 </template>
 
 <style scoped>
