@@ -8,10 +8,18 @@ describe('NotificationToast', () => {
     const wrapper = mount(NotificationToast, {
       props: { status, message: 'Hello' },
     })
+    // Match snapshot
+    expect(wrapper.html()).toMatchSnapshot()
+    // inlineSnapshot
+    expect(wrapper.html()).toMatchInlineSnapshot(`
+      "<div role="alert" class="notification notification--error notification--slide">
+        <p class="notification__text">Hello</p><button title="close" class="notification__button"> ✕ </button>
+      </div>"
+    `)
     expect(wrapper.classes()).toContain('notification--error')
   })
   it('renders the correct style for success', () => {
-    const message = ''
+    const message = 'Hello'
     const wrapper = mount(NotificationToast, {
       props: { message },
     })
